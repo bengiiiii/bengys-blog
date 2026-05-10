@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>bengi's blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+   
+  <div id="card-overlay"></div>
+
+  <!-- Mouse çiçekleri için container -->
+  <div id="flower-container"></div>
+
+  <!-- Kedi (mouse takipçisi) -->
+  <div id="cat" class="character">
+    <canvas id="cat-canvas" width="60" height="60"></canvas>
+  </div>
+
+  <!-- Tavşan (buton zıplayıcısı) -->
+  <div id="bunny" class="character">
+    <canvas id="bunny-canvas" width="50" height="60"></canvas>
+  </div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="logo">bengy</a>
+      <div class="nav-links">
+        <a href="#about" class="nav-btn" data-label="hakkımda">hakkımda</a>
+        <a href="#posts" class="nav-btn" data-label="yazılar">yazılar</a>
+        <a href="#dreams" class="nav-btn" data-label="hayaller">hayaller</a>
+        <a href="#contact" class="nav-btn" data-label="iletişim">iletişim</a>
+      </div>
+      <button id="theme-toggle" aria-label="tema değiştir">
+        <span class="theme-icon">🌙</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-content reveal">
+      <p class="hero-sub">merhaba, burasıı</p>
+      <h1 class="hero-title">bengi's blog</h1>
+      <p class="hero-desc">deneyimlerim, hayallerim, hedeflerim ve arada bir saçmalıklarım 🌸</p>
+      <a href="#posts" class="hero-btn nav-btn">yazıları keşfet</a>
+    </div>
+    <div class="hero-deco reveal-right">
+      <div class="deco-blob blob1"></div>
+      <div class="deco-blob blob2"></div>
+      <div class="deco-blob blob3"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-inner">
+      <h2 class="section-title reveal">hakkımda 🐾</h2>
+      <div class="about-grid">
+        <div class="about-card reveal card-hover" id="about-card-1">
+          <div class="card-cat-seat"></div>
+          <span class="card-emoji">🎓</span>
+          <h3>okul hayatım</h3>
+          <p>Öğrencilik serüvenime halihazırda hala devam ediyorum.Ben bir lisans öğrencisiyim.Yakın Doğu Üniversitesinde Yazılım Mühendisliği okuyorum vee 3. senemdeyimm. Her gün yeni bir şey öğreniyorum.</p>
+        </div>
+        <div class="about-card reveal card-hover" id="about-card-2">
+          <div class="card-cat-seat"></div>
+          <span class="card-emoji">✨</span>
+          <h3>kim miyim?</h3>
+          <p>Hırslı ve her gün daha kararlı bir versiyonumla kendimleyim.Her yeni yarın kendimi geliştirdiğim bir diğer gün benim için.Hayaller kurmaktan hiç vazgeçmeyen biri. Merhaba ben bengi! 🌸</p>
+        </div>
+        <div class="about-card reveal card-hover" id="about-card-3">
+          <div class="card-cat-seat"></div>
+          <span class="card-emoji">🎯</span>
+          <h3>hedeflerim</h3>
+          <p>İleride neler yapmak istiyorum? Çok şey! Bunları burada adım adım yazacağım, takipte kal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POSTS -->
+  <section id="posts">
+    <div class="section-inner">
+      <h2 class="section-title reveal">yazılar 📝</h2>
+
+      <!-- Arama kutusu -->
+      <div class="search-wrap reveal">
+        <input type="text" id="search-input" placeholder="yazılarda ara... 🔍" />
+      </div>
+
+      <div class="posts-grid" id="posts-grid">
+
+        <article class="post-card reveal card-hover" data-tags="okul kişisel">
+          <div class="post-tag">okul</div>
+          <h3 class="post-title">ilk güne dair her şey</h3>
+          <p class="post-excerpt">O gün heyecanlı ve biir o kadar kafam karmakarışıktı.Üst sınıf öğrencileri görünce düşündüm ki...</p>
+          <div class="post-meta">
+            <span>20 Eylül 2023</span>
+            <span class="read-time">⏱ 3 dk okuma</span>
+          </div>
+          <p class="post-full-text">O gün heyecanlı ve biir o kadar kafam karmakarışıktı.Üst sınıf öğrencileri görünce düşündüm ki acaba bir gün ben de onlar gibi olabilecek miyim?Hem bölümüme dair hiçbir şey bilmiyordum hem de öğrenmek için can atıyordum.🌸</p>
+          <button class="close-btn">küçült ✕</button>
+          <a href="#" class="post-btn nav-btn">devamını oku</a>
+        </article>
+
+
+
+
+        <article class="post-card reveal card-hover" data-tags="okul deneyim">        
+          <div class="post-tag">deneyim</div>
+          <h3 class="post-title">bir proje bir ders bir ben</h3>
+          <p class="post-excerpt">Bu projeye başladığımda aslında ne kadar büyük bir şey yapacağımı bilmiyordum. 
+  Sadece bir web sitesi yapacağımı sanıyordum ama süreç çok daha fazlasına dönüştü.</p>
+          <div class="post-meta">
+            <span>10 Mayıs 2026</span>
+            <span class="read-time">⏱ 6 dk okuma</span>
+          </div>
+          <p class="post-full-text">
+  Bu projeye başladığımda aslında ne kadar büyük bir şey yapacağımı bilmiyordum. 
+  Sadece bir web sitesi yapacağımı sanıyordum ama süreç çok daha fazlasına dönüştü.<br><br>
+
+  HTML ile sayfanın iskeletini kurarken, CSS ile renkleri ve animasyonları hayata 
+  geçirirken, JavaScript ile karakterleri çizerken fark ettim ki — bu sadece bir 
+  ödev değil, kendi dünyamı ekrana yansıtma fırsatıydı.<br><br>
+
+  Siyah kediyi canvas ile çizdiğimde ve gözlerinin mouse'u takip ettiğini ilk gördüğümde 
+  inanamadım. "Bunu ben mi yaptım?" dedim kendi kendime. Tavşanın butonlara zıplaması, 
+  çiçeklerin imleci takip etmesi, yazıların elips şeklinde açılması... Her özellik 
+  bana ayrı bir şey öğretti.<br><br>
+
+  En çok öğrendiğim şeyler:<br>
+  — Kodun sadece çalışması değil, güzel ve düzenli olması gerektiği<br>
+  — Bir problemi küçük parçalara bölüp çözmenin önemi<br>
+  — CSS ile sadece stil değil, animasyon ve his de yaratabileceğim<br>
+  — JavaScript'in ne kadar güçlü ve eğlenceli olduğu<br>
+  — Üç ayrı dosyanın birlikte nasıl çalıştığı<br><br>
+
+  Bu projeyi bu kadar değerli kılan şeylerden biri de hocamın bize tahtada 
+  anlatmak yerine, uygulamalı bir proje yaptırmasıydı. Bir şeyi gerçekten 
+  öğrenmenin en iyi yolunun onu yaparak öğrenmek olduğunu bu süreçte bir kez 
+  daha anladım.<br><br>
+
+  Ellerinize sağlık hocam, bu fırsat için gerçekten teşekkür ederim. 
+  Bu proje benim için sadece bir web sitesi değil — ilk kez "ben de yapabilirim" 
+  dediğim an oldu. 🌸
+</p>
+          <button class="close-btn">küçült ✕</button>
+          <a href="#" class="post-btn nav-btn">devamını oku</a>
+        </article>
+
+        
+        <article class="post-card reveal card-hover" data-tags="hayaller gelecek">        
+          <div class="post-tag">hayaller</div>
+          <h3 class="post-title">10 yıl sonra ben</h3>
+          <p class="post-excerpt">Bazen gözlerimi kapatıp hayal kuruyorum. 10 yıl sonra nerede olacağım...</p>
+          <div class="post-meta">
+            <span>3 Mart 2025</span>
+            <span class="read-time">⏱ 5 dk okuma</span>
+          </div>
+          <p class="post-full-text">10 yıl sonra kendimi iyi bir şirketin önemli bir konumunda java programlama dili ile backend geliştirirken görüyorum.Ve aynı zamanda boş vakitlerimde ise kendime ait oyunumu yapıyorken görüyorum.Bunları yapacak olmak en azından yapma yolunda kendimi görmek istemek bile beni heyecanlandiriyor.Ve 10 Yıl sonra yazılım testi yazabilmeyi hedefliyorum uzmanlık alanım olmasa da birçok konuda uzman seviyesinde bilgim olmasını isterim. 🌸</p>
+          <button class="close-btn">küçült ✕</button>
+          <a href="#" class="post-btn nav-btn">devamını oku</a>
+        </article>
+
+
+        <article class="post-card reveal card-hover" data-tags="kişisel deneyim">
+  <div class="post-tag">deneyim</div>
+  <h3 class="post-title">ilk java projem</h3>
+  <p class="post-excerpt">Karmaşık geldi, korkuttu, ama sonunda her şey yerine oturdu...</p>
+  <div class="post-meta">
+    <span>20 Şubat 2025</span>
+    <span class="read-time">⏱ 4 dk okuma</span>
+  </div>
+  <p class="post-full-text">
+    Java'ya ilk başladığımda her şey iç içe geçmiş, karmaşık bir yumak gibi görünüyordu. 
+    Nereye baksam yeni bir kavram, yeni bir terim. "Bu ne zaman anlaşılır hale gelecek?" 
+    diye düşündüğümü hatırlıyorum.<br><br>
+
+    Ama bir noktada bir şey değişti. Projeyi katmanlı mimari ile yazmaya başlayınca 
+    her şeyin aslında ne kadar sistemli ve düzenli olduğunu fark ettim. Her katmanın 
+    bir görevi var, her şeyin bir yeri var. Karmaşık sandığım şey aslında çok düzenli 
+    bir yapıydı — sadece henüz göremiyordum.<br><br>
+
+    Bu projede öğrendiklerim:<br>
+    — Spring Boot ile nasıl uygulama ayağa kaldırılır<br>
+    — Maven'in bağımlılıkları nasıl yönettiği<br>
+    — Katmanlı mimarinin neden bu kadar önemli olduğu<br>
+    — Mikroservislerle çalışmanın mantığı<br>
+    — JWT ile güvenli kimlik doğrulamanın nasıl yapıldığı<br>
+    — DTO'nun neden var olduğu ve hayatı nasıl kolaylaştırdığı<br><br>
+
+    En büyük keşfim ise şu oldu: backend geliştirmeyi seviyorum. Bir isteğin 
+    gelip işlenmesini, veritabanına gidip gelmesini, doğru yanıtın dönmesini 
+    izlemek bana çok tatmin verici geliyor. Görünmez ama her şeyi ayakta tutan 
+    o kısım — tam benim tarzım.<br><br>
+
+    Belki başta karmaşık geldi. Ama şimdi geriye baktığımda, o karmaşanın içinde 
+    yolumu bulduğum an en çok büyüdüğüm an oldu. 🌸
+  </p>
+  <button class="close-btn">küçült ✕</button>
+  <a href="#" class="post-btn nav-btn">devamını oku</a>
+</article>
+
+        <article class="post-card reveal card-hover" data-tags="hayaller kişisel">
+          <div class="post-tag">hayaller</div>
+          <h3 class="post-title">listem: yapmak istediğim 50 şey</h3>
+          <p class="post-excerpt">Bir gün bunların hepsini yapacağım. Belki yarın, belki 10 yıl sonra ama yapacağım...</p>
+          <div class="post-meta">
+            <span>1 Ocak 2025</span>
+            <span class="read-time">⏱ 7 dk okuma</span>
+          </div>
+          <p class="post-full-text">
+  Java dilinde uzmanlaşmak<br>
+  Güçlü backend sistemleri geliştirmek<br>
+  Karmaşık yazılım mimarileri kurabilmek<br>
+  Kendi mobil uygulamamı geliştirmek<br>
+  Yazılım konusunda sürekli kendimi geliştirmek<br>
+  Büyük projelerde çalışabilecek seviyeye gelmek<br>
+  Yazılım testlerini profesyonel şekilde yapabilmek<br>
+  Cybersecurity alanında daha fazla bilgi sahibi olmak<br>
+  İnsanların yazılım konusunda danışabileceği biri olmak<br>
+  Kendi yazılım projemi yayınlamak<br>
+  Açık kaynak projelere katkıda bulunmak<br>
+  Kendi API servisimi geliştirmek<br>
+  Temiz ve sürdürülebilir kod yazabilmek<br>
+  Yazılım mimarisi konusunda uzmanlaşmak<br>
+  Gerçek hayatta kullanılan sistemler geliştirmek<br>
+  Kendi startup'ımı kurmak<br>
+  Teknoloji alanında üretken biri olmak<br>
+  Yazılım alanında güçlü bir kariyer oluşturmak<br>
+  Yeni programlama dilleri öğrenmek<br>
+  Yapay zekâ projeleri geliştirmek<br>
+  Backend performans optimizasyonu öğrenmek<br>
+  Docker ve Kubernetes öğrenmek<br>
+  Cloud sistemleri hakkında uzmanlaşmak<br>
+  Güvenli yazılım geliştirmeyi öğrenmek<br>
+  Büyük veri sistemlerini anlamak<br>
+  Bir gün kendi oyunumu yapmak<br>
+  İnsanların işine yarayan uygulamalar geliştirmek<br>
+  Yazılım topluluklarında aktif olmak<br>
+  Kendi blogumu büyütmek<br>
+  Teknik içerikler üretmek<br>
+  Konferanslara katılmak<br>
+  Yazılım alanında konuşmalar yapmak<br>
+  İyi bir takım lideri olmak<br>
+  Disiplinli çalışmayı hayatıma oturtmak<br>
+  İngilizcemi daha ileri seviyeye taşımak<br>
+  Keman konusunda gelişmek<br>
+  Piyano çalmayı öğrenmek<br>
+  Müzik ve yazılımı birleştiren projeler yapmak<br>
+  Daha yaratıcı biri olmak<br>
+  Dünyayı gezebilmek<br>
+  Teknoloji sayesinde insanlara fayda sağlamak<br>
+  Finansal özgürlüğümü kazanmak<br>
+  Kendi çalışma ortamımı kurmak<br>
+  Daha sabırlı biri olmak<br>
+  Yeni şeyler öğrenme alışkanlığını hiç kaybetmemek<br>
+  Ürettiğim bir uygulamanın binlerce kişi tarafından kullanılması<br>
+  Yazılım alanında iz bırakacak işler yapmak<br>
+  Kendimle gurur duyacağım bir noktaya ulaşmak<br>
+  Hayalimdeki yaşam düzenini kurmak<br>
+  Sürekli gelişmeye devam eden biri olmak 🌸
+</p>
+          <button class="close-btn">küçült ✕</button>
+          <a href="#" class="post-btn nav-btn">devamını oku</a>
+        </article>
+
+<article class="post-card reveal card-hover" data-tags="günlük kişisel">
+  <div class="post-tag">günlük</div>
+  <h3 class="post-title">kod satırları ve pati izleri</h3>
+  <p class="post-excerpt">Yazılım hayatın içindedir, hayvanlar da benim hayatımın içinde... 🐾</p>
+  <div class="post-meta">
+    <span>15 Aralık 2024</span>
+    <span class="read-time">⏱ 2 dk okuma</span>
+  </div>
+  <p class="post-full-text">
+    Yazılım dediğimizde akla hep ekranlar, kodlar, algoritmalar geliyor. 
+    Ama bence yazılım aslında hayatın tam ortasında duruyor — hayattan 
+    besleniyor, hayatı yansıtıyor.<br><br>
+
+    Ben kedileri, tavşanları, gelincikleri çok seviyorum. Bu küçük varlıkların 
+    yanında olmak bana hep iyi hissettiriyor. Bir kedi yanına gelip 
+    yanına oturduğunda, bir tavşan seni merakla izlediğinde, bir gelincik 
+    başını kaldırıp sana baktığında — o anın sıcaklığını başka hiçbir şeyle 
+    tarif edemiyorum.<br><br>
+
+    Bu blogu tasarlamaya başlarken kendime şunu sordum: "Bu sayfa beni 
+    yansıtıyor mu?" Teknik bilgimi göstermek güzeldi ama asıl önemli olan 
+    benim kim olduğumdu. Ve ben; hayvanları seven, pastel renklere bayılan, 
+    tatlı şeylerden ilham alan biriyim.<br><br>
+
+    O yüzden sayfama bir kedi koydum. Kartların üstüne oturdu, gözleriyle 
+    mouse'u takip etti. Bir tavşan ekledim, butonlara zıpladı. Sağ köşeye 
+    sevgili gelinciğimi yerleştirdim, sayfayı izledi. Mouse'umun arkasına 
+    küçük çiçekler bıraktım.<br><br>
+
+    Bunları yaparken fark ettim ki — bu siteyi tasarlamak bana gerçekten 
+    çok eğlenceli geldi. Kod yazmak bu kadar keyifli olabiliyorsa, 
+    yaptığın işi sevmek ne kadar büyük bir şans.<br><br>
+
+    Yazılım sadece mantıktan ibaret değil. İçine biraz sevgi, biraz kişilik, 
+    biraz da ilham koyunca bambaşka bir şeye dönüşüyor. Benim ilhamım ise 
+    hep bu küçük tatlı varlıklardan geliyor. 🐱🐰🤎
+  </p>
+  <button class="close-btn">küçült ✕</button>
+  <a href="#" class="post-btn nav-btn">devamını oku</a>
+</article>
+
+      </div>
+
+      <p id="no-results" style="display:none; text-align:center; color: var(--color-muted); padding: 2rem;">
+        🐰 hiçbir şey bulunamadı...
+      </p>
+    </div>
+  </section>
+
+  <!-- DREAMS -->
+  <section id="dreams">
+    <div class="section-inner">
+      <h2 class="section-title reveal">hayaller & hedefler 🌙</h2>
+      <div class="dreams-list">
+        <div class="dream-item reveal">
+          <span class="dream-num">01</span>
+          <p>kendi alanımda uzmanlaşmak ve işimi sevmek</p>
+        </div>
+        <div class="dream-item reveal">
+          <span class="dream-num">02</span>
+          <p>Kendi 3 boyutlu hikayeli oyunumu geliştirmek 🎮</p>
+        </div>
+        <div class="dream-item reveal">
+          <span class="dream-num">03</span>
+          <p>Java dilini profesyonel düzeyde öğrenmek ve kullanablmek🐰</p>
+        </div>
+        <div class="dream-item reveal">
+          <span class="dream-num">04</span>
+          <p>Kendime ait bir mobil uygulama yapmakk ⎛⎝ ≽ > ⩊ < ≼ ⎠⎞</p>
+        </div>
+        <div class="dream-item reveal">
+          <span class="dream-num">05</span>
+          <p>bu blogu büyütmek ve insanlarla gerçekten bağlantı kurmak🌸</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-inner">
+      <h2 class="section-title reveal">iletişim 💌</h2>
+      <div class="contact-card reveal">
+        <p>benimle konuşmak istersen, bir şey sormak istersen ya da sadece merhaba demek istersen buradayım!</p>
+        <a href="https://mail.google.com/mail/?view=cm&to=bengisu.r@gmail.com" target="_blank" class="hero-btn nav-btn">merhaba de 💌</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+<footer>
+  <p>made with 🌸 by bengy &nbsp;·&nbsp; 2025</p>
+  <div class="footer-contact">
+    <a href="tel:+90XXXXXXXXXX">📞 +90 551 952 95 66</a>
+    <a href="https://mail.google.com/mail/?view=cm&to=senin@gmail.com" target="_blank">✉️ bengisu.r@gmail.com</a>
+    <a href="https://instagram.com/kullaniciadın" target="_blank">
+  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; margin-right:4px;">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+    <circle cx="12" cy="12" r="4"/>
+    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+  </svg>@bengii.exe
+</a>
+  </div>
+</footer>
+
+  <script src="script.js"></script>
+
+<div id="ferret-corner">
+  <img src="ferret.png" alt="ferret" />
+</div>
+
+</body>
+</html>
